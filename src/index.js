@@ -1,6 +1,3 @@
-class Test1 {}
+import { configureTextBuilder } from 'troika-three-text'
 
-class Test2 {}
-Test2.prototype.test = true
-
-console.log(new Test1())
+const test = configureTextBuilder
