@@ -10,4 +10,14 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    {
+      name: 'vite-fallback',
+      generateBundle(_options, bundle) {
+        if (bundle['index-vite.js'].code === '\n') {
+          this.emitFile({ type: 'asset', fileName: 'index-vite.js', source: '' })
+        }
+      },
+    },
+  ],
 })
